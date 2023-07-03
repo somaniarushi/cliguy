@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light color text */
+  --foreground-rgb: 0, 0, 0;
+  /* Dark gradient */
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+blockquote {
+  color: #868686;
+  margin: 0;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  border-left: 3px #eee solid;
+}
+
+.special {
+  color: #1171cc;
+  font-weight: bold;
+  /* Underline with dashes */
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  /* Add some space between underline and text */
+  text-underline-offset: 0.2em;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark text color */
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+  /* Set textarea font color to black */
+  textarea, input {
+    color: rgb(var(--background-end-rgb));
+  }
+  blockquote {
+    color: #bdbdbd;
+    margin: 0;
+    padding-left: 1em;
+    margin-bottom: 1em;
+    border-left: 3px #eee solid;
+  }
+
+  .special {
+    color: #ddecfb;
+    font-weight: bold;
+    /* Underline with dashes */
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 0.2em;
+
+  }
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
